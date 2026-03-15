@@ -4,6 +4,8 @@ import one.digitalinnovation.gof.facade.Facade;
 import one.digitalinnovation.gof.factorymethod.BikeFactory;
 import one.digitalinnovation.gof.factorymethod.CarFactory;
 import one.digitalinnovation.gof.factorymethod.Creator;
+import one.digitalinnovation.gof.observer.NewsAgency;
+import one.digitalinnovation.gof.observer.NewsChannel;
 import one.digitalinnovation.gof.singleton.SingletonEager;
 import one.digitalinnovation.gof.singleton.SingletonLazy;
 import one.digitalinnovation.gof.singleton.SingletonLazyHolder;
@@ -63,6 +65,21 @@ public class Test {
 		
 		Creator bikeFactory = new BikeFactory();
 		bikeFactory.someOperation();
+		
+		// Observer
+		
+		NewsAgency agency = new NewsAgency();
+		NewsChannel channel1 = new NewsChannel("CNN");
+		NewsChannel channel2 = new NewsChannel("BBC");
+		
+		agency.attach(channel1);
+		agency.attach(channel2);
+		
+		agency.setNews("Breaking news: Java patterns implemented!");
+		
+		agency.detach(channel1);
+		
+		agency.setNews("Update: Observer pattern added.");
 	}
 
 }

@@ -4,3 +4,8 @@ Repositório com as implementações dos padrões de projeto explorados no Lab "
 - Singleton
 - Strategy
 - Facade
+
+# O que foi implementado
+Com objetivos de estudos, foi implementado:
+ - Factory Method
+ - Observer
