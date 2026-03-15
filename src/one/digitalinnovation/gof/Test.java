@@ -1,6 +1,9 @@
 package one.digitalinnovation.gof;
 
 import one.digitalinnovation.gof.facade.Facade;
+import one.digitalinnovation.gof.factorymethod.BikeFactory;
+import one.digitalinnovation.gof.factorymethod.CarFactory;
+import one.digitalinnovation.gof.factorymethod.Creator;
 import one.digitalinnovation.gof.singleton.SingletonEager;
 import one.digitalinnovation.gof.singleton.SingletonLazy;
 import one.digitalinnovation.gof.singleton.SingletonLazyHolder;
@@ -52,6 +55,14 @@ public class Test {
 		
 		Facade facade = new Facade();
 		facade.migrarCliente("Emmanuel", "41000100");
+		
+		// Factory Method
+		
+		Creator carFactory = new CarFactory();
+		carFactory.someOperation();
+		
+		Creator bikeFactory = new BikeFactory();
+		bikeFactory.someOperation();
 	}
 
 }
